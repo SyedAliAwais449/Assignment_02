@@ -9,4 +9,6 @@
     <string name="unCheckButton">Check Button is disabled</string>
     <string name="switchButton">Switch is enabled</string>
     <string name="unSwitchButton">Switch is disabled</string>
+    <string name="activity_2">Activity 2</string>
+    <string name="action_favorite">favorite</string>
 </resources>

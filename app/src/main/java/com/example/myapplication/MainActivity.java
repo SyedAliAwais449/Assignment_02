@@ -1,7 +1,11 @@
 package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -17,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     Button button, button2, button3;
     CheckBox ck1;
     Switch switchButton;
+    Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +37,8 @@ public class MainActivity extends AppCompatActivity {
         textView= findViewById(R.id.textView3);
         textView6= findViewById(R.id.textView6);
         switchButton= findViewById(R.id.switch2);
-
+        toolbar= findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
         switchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -73,6 +79,25 @@ public class MainActivity extends AppCompatActivity {
                 convertFromKiloToTonne();
             }
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+// Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.about:
+
+            default:
+// If we got here, the user's action was not recognized.
+// Invoke the superclass to handle it.
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     private void convertFromKiloToTonne() {
