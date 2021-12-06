@@ -3,6 +3,7 @@ package com.example.myapplication;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -12,6 +13,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -92,12 +94,15 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.about:
-
+                Intent intent= new Intent(MainActivity.this, MainActivity3.class);
+                startActivity(intent);
+                break;
             default:
 // If we got here, the user's action was not recognized.
 // Invoke the superclass to handle it.
                 return super.onOptionsItemSelected(item);
         }
+        return false;
     }
 
     private void convertFromKiloToTonne() {
